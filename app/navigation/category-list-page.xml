@@ -1,0 +1,19 @@
+<nsDrawer:RadSideDrawer id="sideDrawer" xmlns:nsDrawer="nativescript-ui-sidedrawer">
+    <nsDrawer:RadSideDrawer.drawerContent>
+        <GridLayout rows="auto, *" class="root-drawer-content">
+            <StackLayout>
+                <Label text="{{ currentParent.title }}" class="h1 text-center" />
+            </StackLayout>
+            <ListView id="sidedrawer-list" row="1" items="{{ currentSubItems }}" itemTap="{{ onNavigationItemTap }}" class="root-drawer-content" >
+                <ListView.itemTemplate>
+                    <StackLayout id="item-container" class="root-item-stack-layout" class="sidedrawer-list-item">
+                        <Label id="label" text="{{ title }}" textWrap="true"  margin="0 0 0 10"/>
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </GridLayout>
+    </nsDrawer:RadSideDrawer.drawerContent>
+    <nsDrawer:RadSideDrawer.mainContent>
+       <Frame defaultPage="navigation/main-content-page"></Frame>
+    </nsDrawer:RadSideDrawer.mainContent>
+</nsDrawer:RadSideDrawer>
